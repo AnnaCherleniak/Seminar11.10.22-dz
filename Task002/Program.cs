@@ -20,9 +20,17 @@ GenerateArrayElements(array, 0, 10);
 Console.WriteLine("Ваш массив: ");
 PrintArray(array);
 int sum = 0;
+int sum2 = 0;
     for(int i = 0; i < array.Length; i++)
-        sum = sum + array[i];
-Console.WriteLine($"Сумма элементов массива: {sum}");
+    {
+        if(array[i] > 0) sum = sum + array[i];
+        else
+        {
+            sum2 = sum2 + array[i];
+        }
+    }
+Console.WriteLine($"Сумма положительных элементов массива: {sum}");
+Console.WriteLine($"Сумма отрицательных элементов массива: {sum2}");
 
 
 
