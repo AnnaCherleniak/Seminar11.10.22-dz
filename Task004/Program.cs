@@ -18,3 +18,4 @@ Console.WriteLine("Ваш массив - ");
 GenerateArrayElements(array);
 PrintArray(array);
 Console.WriteLine();
+//ДОДЕЛАТЬ!!!!
