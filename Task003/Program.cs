@@ -13,23 +13,30 @@ void PrintArray(int[]array)
         Console.Write($"{array[i]} ");
     Console.WriteLine();
 }
+int CountEvenNumber(int[]array)
+{
+    int x = 0;
+    for(int i = 0; i < array.Length; i++)
+    {
+        if(array[i] % 2 == 0) x++;
+    }
+    return x;
+}
+int CountOddNumber(int[]array)
+{
+    int x = 0;
+    int n = 0;
+    for(int i = 0; i < array.Length; i++)
+    {
+        n = array[i] % 2;
+        if(n > 0) x++;
+    }
+    return x;
+}
 Console.Write("Введите размер массива -  ");
 int length = int.Parse(Console.ReadLine() ?? "0");
 int[] array = new int[length];
 GenerateArrayElements(array, 100, 1000);
 PrintArray(array);
-int x = 0;
-int y = 0;
-int i = 0;
-while(i < array.Length)
-{
-    if(array[i] % 2 == 0) x+= 1;
-    
-    else
-    {
-        y+= 1;
-    }
-    i++;
-}
-Console.WriteLine($"Количество четных чисел - {x}");
-Console.WriteLine($"Количество нечетных чисел - {y}");
+Console.WriteLine($"Количество четных чисел - {CountEvenNumber(array)}");
+Console.WriteLine($"Количество нечетных чисел - {CountOddNumber(array)}");
