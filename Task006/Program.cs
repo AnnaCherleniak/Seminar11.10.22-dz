@@ -13,20 +13,24 @@ void PrintArray(int[]array)
         Console.Write($"{array[i]}");
     Console.WriteLine();
 }
+void MultiplicationNumber(int[]array)
+{
+    int x = 0;
+    int min = 0;
+    int max = array.Length - 1;
+    int n = 1;
+    while(min < max)
+    {
+        x = array[min] * array[max];
+        Console.WriteLine($"Произведение {n} пары чисел: {x}");
+        min++;
+        max--;
+        n++;
+    }
+}
 Console.Write("Введите длину массива- ");
 int length = int.Parse(Console.ReadLine() ?? "0");
 int[]array = new int[length];
 GenerateArrayElements(array, 1, 10);
 PrintArray(array);
-int x = 0;
-int min = 0;
-int max = length - 1;
-int n = 1;
-while(min < max)
-{
-    x = array[min] * array[max];
-    Console.WriteLine($"Произведение {n} пары чисел: {x}");
-    min++;
-    max--;
-    n++;
-}
+MultiplicationNumber(array);
